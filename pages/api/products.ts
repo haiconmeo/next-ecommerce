@@ -1,13 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // fake data
-import products from '../../utils/data/products';
+import axios from 'axios';
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req);
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    // Make an HTTP GET request to the external API
+    const response = await axios.get('http://localhost:8080/products');
 
-  // fake loading time
-  setTimeout(() => {
+    // Extract the data from the response
+    const products = response.data;
+
+    // Respond with the fetched products
     res.status(200).json(products);
-  }, 800);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 }

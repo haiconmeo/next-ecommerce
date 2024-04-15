@@ -51,7 +51,7 @@ const Product = ({ product }: ProductPageType) => {
             </div>
 
             <Description show={showBlock === 'description'} />
-            <Reviews product={product} show={showBlock === 'reviews'} />
+            {/* <Reviews product={product} show={showBlock === 'reviews'} /> */}
           </div>
         </div>
       </section>

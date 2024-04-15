@@ -37,7 +37,7 @@ const Content = ({ product }: ProductContent) => {
     const productToSave: ProductStoreType = { 
       id: product.id,
       name: product.name,
-      thumb: product.images ? product.images[0] : '',
+      thumb: product.images ? product.images[0].imageUrl : '',
       price: product.currentPrice,
       count: count,
       color: color,

@@ -1,5 +1,7 @@
+import { ImageProduct } from "types";
+
 type GalleryProductType = {
-  images: string[]
+  images: ImageProduct[]
 }
 
 const Gallery = ({ images }: GalleryProductType) => {
@@ -9,14 +11,14 @@ const Gallery = ({ images }: GalleryProductType) => {
     <section className="product-gallery">
       <div className="product-gallery__thumbs">
         {images.map(image => (
-          <div key={image} className="product-gallery__thumb">
-            <img src={image} alt="" />
+          <div key={image.id} className="product-gallery__thumb">
+            <img src={image.imageUrl} alt="" />
           </div>
         ))}
       </div>
 
       <div className="product-gallery__image">
-        <img src={featImage} alt="" />
+        <img src={featImage.imageUrl} alt="" />
       </div>
     </section>
   );

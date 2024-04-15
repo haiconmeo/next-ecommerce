@@ -3,6 +3,12 @@ export type VotesType = {
   value: number;
 }
 
+export type ImageProduct = {
+  id: number;
+  productId: number;
+  imageUrl: string;
+
+}
 export type PunctuationType = {
   countOpinions: number;
   punctuation: number;
@@ -24,7 +30,7 @@ export type ProductType = {
   count: number;
   color: string;
   size: string;
-  images: string[];
+  images: ImageProduct[];
   discount?: string;
   currentPrice: number;
   punctuation: PunctuationType;
@@ -36,7 +42,7 @@ export type ProductTypeList = {
   name: string;
   price: string;
   color: string;
-  images: string[];
+  images: ImageProduct[];
   discount?: string;
   currentPrice?: number;
 }
