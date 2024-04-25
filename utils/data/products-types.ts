@@ -1,22 +1,22 @@
 export const productsTypes = [
   {
     id: '1',
-    name: 'T-Shirts',
+    name: 'Áo thun cổ tròn',
     count: '172',
   },
   {
     id: '2',
-    name: 'Sweatshirts',
+    name: 'Áo polo',
     count: '131',
   },
   {
     id: '3',
-    name: 'Tank Tops',
+    name: 'Áo hoodie',
     count: '56',
   },
   {
     id: '4',
-    name: 'Dress shirts',
+    name: 'Áo sơ mi',
     count: '8',
   },
 ];

@@ -9,7 +9,7 @@ const IndexPage = () => {
     <Layout>
       <PageIntro />
 
-      <section className="featured">
+      {/* <section className="featured">
         <div className="container">
           <article style={{backgroundImage: 'url(/images/featured-1.jpg)'}} className="featured-item featured-item-large">
             <div className="featured-item__content">
@@ -32,50 +32,50 @@ const IndexPage = () => {
             </div>
           </article>
         </div>
-      </section>
+      </section> */}
 
       <section className="section">
         <div className="container">
           <header className="section__intro">
-            <h4>Why should you choose us?</h4>
+            <h4>Tại sao bạn nên chọn chúng tôi?</h4>
           </header>
 
           <ul className="shop-data-items">
             <li>
               <i className="icon-shipping"></i>
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
-                <p>All purchases over $199 are eligible for free shipping via USPS First Class Mail.</p>
+                <h4>Giao Hàng Miễn Phí</h4>
+                <p>Tất cả đơn hàng trên $199 đều được hưởng giao hàng miễn phí qua USPS First Class Mail.</p>
               </div>
             </li>
-            
+
             <li>
               <i className="icon-payment"></i>
               <div className="data-item__content">
-                <h4>Easy Payments</h4>
-                <p>All payments are processed instantly over a secure payment protocol.</p>
+                <h4>Thanh Toán Dễ Dàng</h4>
+                <p>Tất cả các khoản thanh toán được xử lý ngay lập tức qua một giao thức thanh toán an toàn.</p>
               </div>
             </li>
-            
+
             <li>
               <i className="icon-cash"></i>
               <div className="data-item__content">
-                <h4>Money-Back Guarantee</h4>
-                <p>If an item arrived damaged or you've changed your mind, you can send it
-                back for a full refund.</p>
+                <h4>Bảo Đảm Hoàn Tiền</h4>
+                <p>Nếu một mặt hàng bị hỏng khi nhận hoặc bạn đã thay đổi ý kiến, bạn có thể gửi nó trở lại để nhận hoàn tiền đầy đủ.</p>
               </div>
             </li>
-            
+
             <li>
               <i className="icon-materials"></i>
               <div className="data-item__content">
-                <h4>Finest Quality</h4>
-                <p>Designed to last, each of our products has been crafted with the finest materials.</p>
+                <h4>Chất Lượng Tốt Nhất</h4>
+                <p>Thiết kế để kéo dài, mỗi sản phẩm của chúng tôi đều được chế tạo từ những nguyên liệu tốt nhất.</p>
               </div>
             </li>
           </ul>
         </div>
       </section>
+
 
       <ProductsFeatured />
       <Subscribe />

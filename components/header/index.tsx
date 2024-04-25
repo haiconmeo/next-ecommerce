@@ -19,6 +19,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
+
   const searchRef = useRef(null);
 
   const headerClass = () => {
@@ -28,7 +29,12 @@ const Header = ({ isErrorPage }: HeaderType) => {
       setOnTop(false);
     }
   }
-
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const searchTerm = formData.get('search') as string;
+    router.push(`/products?search=${searchTerm}`);
+  };
   useEffect(() => {
     if(!arrayPaths.includes(router.pathname) || isErrorPage) {
       return;
@@ -56,20 +62,19 @@ const Header = ({ isErrorPage }: HeaderType) => {
     <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className="container">
         <Link href="/">
-          <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
+          <a><h1 className="site-logo"><Logo />Miart Store</h1></a>
         </Link>
         <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
           <Link href="/products">
-            <a>Products</a>
+            <a>Sản Phẩm</a>
           </Link>
-          <a href="#">Inspiration</a>
-          <a href="#">Rooms</a>
+          <a href="#">Khuyến Mãi</a>
           <button className="site-nav__btn"><p>Account</p></button>
         </nav>
 
         <div className="site-header__actions">
           <button ref={searchRef} className={`search-form-wrapper ${searchOpen ? 'search-form--active' : ''}`}>
-            <form className={`search-form`}>
+            <form className={`search-form`} onSubmit={handleSubmit}>
               <i className="icon-cancel" onClick={() => setSearchOpen(!searchOpen)}></i>
               <input type="text" name="search" placeholder="Enter the product you are looking for" />
             </form>  

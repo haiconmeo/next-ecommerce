@@ -5,8 +5,12 @@ import axios from 'axios';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    const { page = '1', search = '', sort = 'popular', filter = 'all' } = req.query;
+
     // Make an HTTP GET request to the external API
-    const response = await axios.get('http://localhost:8080/products');
+    const url = `http://localhost:8080/products?page=${page}&search=${search}&sort=${sort}&filter=${filter}`;
+
+    const response = await axios.get(url);
 
     // Extract the data from the response
     const products = response.data;
